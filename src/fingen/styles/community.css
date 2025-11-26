@@ -1,0 +1,109 @@
+/* Neon matte-black community styles */
+.community-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.community-header {
+  background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(10,10,10,0.6));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 16px;
+}
+.community-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+.community-subtitle {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.community-card {
+  background: rgba(12,12,18,0.8);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 0 0 1px rgba(0,255,255,0.06) inset, 0 16px 28px rgba(0,0,0,0.3);
+}
+.community-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.community-card-title {
+  font-weight: 700;
+}
+.community-tag {
+  font-size: 12px;
+  color: #9efcff;
+  border: 1px solid rgba(158,252,255,0.5);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+.community-card-desc {
+  font-size: 13px;
+  opacity: 0.85;
+  margin-bottom: 4px;
+}
+.community-card-rule {
+  font-size: 12px;
+  opacity: 0.75;
+}
+.community-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.community-progress {
+  flex: 1;
+  height: 10px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.community-progress.small { height: 8px; }
+.community-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #00f5ff, #7cffc4);
+  box-shadow: 0 0 12px rgba(0,245,255,0.6);
+}
+.community-progress-label {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.community-my {
+  background: rgba(10,10,14,0.7);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 12px;
+}
+.community-section-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.community-my-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px dashed rgba(255,255,255,0.08);
+}
+.community-my-row:first-child { border-top: none; }
+.community-my-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

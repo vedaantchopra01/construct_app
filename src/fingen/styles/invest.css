@@ -1,0 +1,30 @@
+/* SIP & Education neon styles */
+.sip-shell, .edu-shell { padding: 18px; }
+.sip-card, .edu-card { background: #0d0f10; border: 1px solid rgba(147,197,253,0.16); border-radius: 18px; padding: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+.sip-title, .edu-title { font-size: 22px; font-weight: 800; color: #e5f2ff; }
+.sip-sub, .edu-sub { color: #9fb3c8; margin-top: 6px; }
+.sip-grid { margin-top: 12px; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; }
+.sip-label { color: #9fb3c8; font-weight: 600; }
+.sip-input { background: #0c1321; color: #e6f0ff; border: 1px solid rgba(147,197,253,0.25); border-radius: 12px; padding: 10px 12px; }
+.sip-reco { margin-top: 12px; display: flex; justify-content: space-between; align-items: center; background: rgba(147,197,253,0.06); border: 1px solid rgba(147,197,253,0.16); border-radius: 14px; padding: 10px 12px; }
+.sip-reco-title { color: #b9d7ff; font-weight: 700; }
+.sip-reco-amt { font-size: 24px; font-weight: 900; color: #e5f2ff; }
+.sip-tip { color: #9fb3c8; margin-top: 4px; }
+.sip-reco-actions { display: flex; gap: 8px; }
+.sip-actions { margin-top: 12px; }
+.sip-btn, .edu-btn { border: none; border-radius: 12px; padding: 10px 14px; font-weight: 800; cursor: pointer; background: rgba(147,197,253,0.12); color: #cfe6ff; }
+.sip-btn:hover, .edu-btn:hover { background: rgba(147,197,253,0.18); }
+.sip-primary { background: linear-gradient(135deg,#22d3ee,#a78bfa); color: #0d0f10; box-shadow: 0 12px 30px rgba(26,209,255,0.28); }
+.sip-list { margin-top: 14px; }
+.sip-subtitle { font-size: 18px; font-weight: 800; color: #e5f2ff; margin-bottom: 6px; }
+.sip-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; background: #0b0e10; border: 1px solid rgba(147,197,253,0.16); border-radius: 14px; margin-top: 8px; }
+.sip-item-title { font-weight: 800; color: #cfe6ff; }
+.sip-item-sub { color: #9fb3c8; }
+.sip-item-actions { display: flex; gap: 8px; }
+
+.edu-note { color: #9fb3c8; margin-top: 8px; }
+.edu-grid { margin-top: 12px; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.edu-item { background: #0b0e10; border: 1px solid rgba(147,197,253,0.16); border-radius: 14px; padding: 12px; display: grid; gap: 8px; }
+.edu-item-title { font-weight: 800; color: #cfe6ff; }
+.edu-item-sub { color: #9fb3c8; }
+.edu-frame { width: 100%; height: 160px; border: none; border-radius: 12px; background: #0d0f10; }

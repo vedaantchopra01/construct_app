@@ -1,0 +1,48 @@
+/* Theme vibes: apply soft transitions and override accent colors */
+.App { transition: background 400ms ease, color 200ms ease }
+
+.App.theme-food { background: radial-gradient(1200px circle at 10% 10%, rgba(255,198,93,0.08), transparent 40%), #0B1220; }
+.App.theme-food .pp-heading { color: #FFC65D }
+.App.theme-food .pp-gradient-border { border-image: linear-gradient(45deg, #FFC65D, #FF8BA7) 1 }
+.App.theme-food .pp-btn-primary { background: linear-gradient(90deg, #FF8BA7, #FFC65D); color: #0B1220 }
+
+.App.theme-selfcare { background: radial-gradient(1200px circle at 90% 10%, rgba(186,231,255,0.08), transparent 40%), #0A0F1A; }
+.App.theme-selfcare .pp-heading { color: #BAE7FF }
+.App.theme-selfcare .pp-gradient-border { border-image: linear-gradient(45deg, #BAE7FF, #C6A8FF) 1 }
+.App.theme-selfcare .pp-btn-primary { background: linear-gradient(90deg, #C6A8FF, #BAE7FF); color: #0A0F1A }
+
+.App.theme-fitness { background: radial-gradient(1200px circle at 50% 0%, rgba(116,240,173,0.08), transparent 40%), #0A0F1A; }
+.App.theme-fitness .pp-heading { color: #74F0AD }
+.App.theme-fitness .pp-gradient-border { border-image: linear-gradient(45deg, #74F0AD, #85A7FF) 1 }
+.App.theme-fitness .pp-btn-primary { background: linear-gradient(90deg, #85A7FF, #74F0AD); color: #0A0F1A }
+
+/* Hover effects and soft transitions */
+.pp-btn, .pp-input, .pp-number { transition: transform 150ms ease, box-shadow 200ms ease, background 200ms ease }
+.pp-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(167,139,250,0.18) }
+.pp-card { transition: border-color 200ms ease, box-shadow 200ms ease }
+.pp-card:hover { box-shadow: 0 8px 28px rgba(157,171,188,0.18) }
+
+/* Progress bars */
+.pp-progress {
+  height: 10px; border-radius: 10px; background: rgba(157,171,188,0.2); overflow: hidden;
+}
+.pp-progress > div { height: 100%; background: linear-gradient(90deg, #A78BFA, #22D3EE) }
+
+/* New global themes */
+.App.bnm-theme-dark {
+  background: radial-gradient(1200px circle at 20% 10%, rgba(36,56,89,0.18), transparent 40%), #0B1220;
+  color: #E6EDF3;
+}
+.App.bnm-theme-dark .pp-btn-primary { background: linear-gradient(90deg, #1f9dcd, #7c4dff); color: #0B1220 }
+
+.App.bnm-theme-neon {
+  background: radial-gradient(1200px circle at 10% 5%, rgba(34,211,238,0.18), transparent 40%), radial-gradient(1200px circle at 90% 0%, rgba(167,139,250,0.18), transparent 42%), #091220;
+  color: #E6EDF3;
+}
+.App.bnm-theme-neon .pp-btn-primary { background: linear-gradient(90deg, #22D3EE, #A78BFA); color: #091220 }
+
+.App.bnm-theme-light {
+  background: linear-gradient(180deg, #f6f9ff, #e7eefc);
+  color: #0A0F1A;
+}
+.App.bnm-theme-light .pp-btn-primary { background: linear-gradient(90deg, #6c89ff, #5fd4ff); color: white }
