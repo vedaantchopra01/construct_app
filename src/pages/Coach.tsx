@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useAppState } from '../state/AppState'
-import '../../pocketplan/styles.css'
+import '../styles/pocketplan.css'
 
 function reply(input: string) {
   const q = input.toLowerCase()

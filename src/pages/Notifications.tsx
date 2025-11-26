@@ -1,6 +1,6 @@
 import React from 'react'
 import { useAppState } from '../state/AppState'
-import '../../pocketplan/styles.css'
+import '../styles/pocketplan.css'
 
 const Notifications: React.FC = () => {
   const { notifications } = useAppState()

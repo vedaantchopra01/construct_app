@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import { useAppState } from '../state/AppState'
-import '../../pocketplan/styles.css'
+import '../styles/pocketplan.css'
 import '../styles/invest.css'
 
 const SIP: React.FC = () => {
@@ -12,7 +12,7 @@ const SIP: React.FC = () => {
 
   const videosWatched = useMemo(() => Object.values(watched).filter(Boolean).length, [watched])
   const savings = budgetPlan?.savings || Math.round((profile?.income || 0) * 0.2)
-  const literacyFactor = Math.min(1.4, 1 + (videosWatched / 20)) // + up to 40%
+  const literacyFactor = Math.min(1.4, 1 + (videosWatched / 20)) 
   const recommended = Math.max(100, Math.round((savings * 0.25) * (literacyFactor)))
 
   const enable = () => {

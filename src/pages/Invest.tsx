@@ -1,10 +1,10 @@
 import React, { useMemo, useState } from 'react'
 import { useAppState } from '../state/AppState'
-import '../../pocketplan/styles.css'
+import '../styles/pocketplan.css'
 
 const pvFuture = (monthly: number, months: number, annualRatePct: number) => {
   const r = annualRatePct / 100 / 12
-  // FV of SIP: monthly * [((1+r)^n - 1)/r] * (1+r)
+  
   const fv = monthly * (((Math.pow(1 + r, months) - 1) / r) * (1 + r))
   return Math.round(fv)
 }
@@ -22,7 +22,7 @@ const Invest: React.FC = () => {
     const essentials = (profile?.rent || 0) + (profile?.food || 0) + (profile?.transport || 0) + (profile?.other || 0)
     const remaining = Math.max(0, income - essentials)
     const saved = budgetPlan?.savings || Math.round(remaining * 0.5)
-    // Recommend 30% of savings towards investments, adjust if overspending
+    
     let recommended = Math.round(saved * 0.3)
     const tip = remaining < saved ? 'Expenses high! Reduce investments temporarily.' : `You are saving ₹${saved} → Invest ₹${recommended} safely.`
     return { recommended, saved, remaining, tip }

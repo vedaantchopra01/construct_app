@@ -66,13 +66,13 @@ interface AppStateType {
   incrementStreak: () => void
   resetStreak: () => void
 
-  // SIP auto-invest plans
+  
   sipPlans: SIPPlan[]
   addSIPPlan: (p: Omit<SIPPlan, 'id' | 'createdAt'>) => void
   toggleSIPPlan: (id: string, active: boolean) => void
   runSIPNow: (id: string) => void
 
-  // Gamified/computed metrics
+  
   totalBalance: number
   trustScore: number
   logout: () => void
@@ -155,7 +155,7 @@ export const AppStateProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   const setProfile = (p: Profile) => {
     setProfileState(p)
-    // initial rewards for completing onboarding
+    
     addRewards(50)
     notify('Welcome to FinGen! 🎉 You earned 50 coins for onboarding.')
   }
@@ -190,7 +190,7 @@ export const AppStateProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       date: t.date || new Date().toISOString()
     }
     setTransactions(prev => [tx, ...prev])
-    // rewards: saving >20% or staying under budget can be computed on dashboard
+    
     if (tx.type === 'debit' && tx.category === 'Food' && tx.amount < 200) addRewards(2)
   }
 
@@ -202,7 +202,7 @@ export const AppStateProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   const markWatched = (id: string) => {
     setWatched(prev => ({ ...prev, [id]: true }))
-    // badge reward after 5 videos
+    
     const watchedCount = Object.values({ ...watched, [id]: true }).filter(Boolean).length
     if (watchedCount % 5 === 0) {
       addRewards(25)
@@ -213,14 +213,14 @@ export const AppStateProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const addRewards = (points: number) => {
     setRewards(prev => {
       const next = prev + points
-      // leveling
+      
       const lvlOrder = ['Bronze','Silver','Gold','Platinum','Diamond'] as const
       const lvl = next > 2000 ? 'Diamond' : next > 1200 ? 'Platinum' : next > 700 ? 'Gold' : next > 300 ? 'Silver' : 'Bronze'
       const prevIdx = lvlOrder.indexOf(level)
       const nextIdx = lvlOrder.indexOf(lvl)
       setLevel(lvl)
       if (nextIdx > prevIdx) {
-        // celebrate level up
+        
         confettiBurst()
         notify(`Level up! You reached ${lvl} 🎉`)
       }
@@ -259,7 +259,7 @@ export const AppStateProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   })
   const resetStreak = () => setStreakDays(0)
 
-  // SIP helpers
+  
   const addSIPPlan: AppStateType['addSIPPlan'] = (p) => {
     const plan: SIPPlan = { id: Date.now().toString(), createdAt: new Date().toISOString(), ...p }
     setSipPlans(prev => [plan, ...prev])
@@ -317,7 +317,7 @@ export const AppStateProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     runSIPNow,
     totalBalance: bankAccounts.reduce((sum, a) => sum + (a.balance || 0), 0),
     trustScore: (() => {
-      // Compute a simple trust score: base 50 + streak bonus + level bonus - overspend penalty
+      
       const base = 50
       const streakBonus = Math.min(20, streakDays)
       const levelBonus = level === 'Diamond' ? 25 : level === 'Platinum' ? 18 : level === 'Gold' ? 12 : level === 'Silver' ? 6 : 0

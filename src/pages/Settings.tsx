@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useAppState } from '../state/AppState'
-import '../../pocketplan/styles.css'
+import '../styles/pocketplan.css'
 
 const Settings: React.FC = () => {
   const { privacyMode, togglePrivacy, profile, setProfile } = useAppState()

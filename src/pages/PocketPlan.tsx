@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts'
-import './styles.css'
+import '../styles/pocketplan.css'
 
 type Allocation = {
   savings: number
@@ -20,8 +20,8 @@ function formatCurrency(n: number) {
 
 function computePlan(
   income: number,
-  selfCareLevel: number, // 0..100
-  eatsOutTimes: number,  // 0..30
+  selfCareLevel: number,
+  eatsOutTimes: number,
   gymEnabled: boolean,
   gymSpend: number,
   otherInput: number
@@ -29,29 +29,29 @@ function computePlan(
   const savings = Math.round(income * 0.20)
   const spendable = Math.max(0, income - savings)
 
-  // Base weights influenced by answers
-  // Start with baseline percentages for the 80% spendable bucket
-  let foodWeight = 25 // baseline
+
+
+  let foodWeight = 25
   let selfCareWeight = 20
   let gymWeight = gymEnabled ? 15 : 5
   let othersWeight = 20
 
-  // Influence by sliders
-  // Eating out frequency → scale food between ~10% and ~40%
+
+
   const foodBoost = Math.min(40, 10 + (eatsOutTimes / 30) * 30)
   foodWeight = foodBoost
 
-  // Self care slider → scale self-care between ~8% and ~35%
+
   const selfCareBoost = Math.min(35, 8 + (selfCareLevel / 100) * 27)
   selfCareWeight = selfCareBoost
 
-  // If gym is enabled and has fixed spend, ensure minimum for gym
+
   const minGymAmount = gymEnabled ? Math.min(spendable * 0.25, gymSpend) : 0
 
-  // Other expenses: if user typed a number, ensure at least that much allocated
+
   const minOtherAmount = Math.max(0, otherInput || 0)
 
-  // Normalize remaining weights to the spendable remainder after minimums
+
   const remainingSpendable = Math.max(0, spendable - minGymAmount - minOtherAmount)
   const weightSum = foodWeight + selfCareWeight + (gymEnabled ? gymWeight : 0) + othersWeight
   const foodAmount = Math.round((foodWeight / weightSum) * remainingSpendable)
@@ -155,7 +155,7 @@ const Results: React.FC<{ income: number; alloc: Allocation; onRestart: () => vo
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie data={pieData} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={100} isAnimationActive>
-              {pieData.map((entry, index) => (
+              {pieData.map((_, index) => (
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>
@@ -199,7 +199,7 @@ const PocketPlan: React.FC = () => {
 
   const runAI = () => {
     setProcessing(true)
-    // Simulate AI thinking
+
     setTimeout(() => { setProcessing(false); setStep(7) }, 1200)
   }
 

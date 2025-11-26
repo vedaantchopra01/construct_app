@@ -1,46 +1,46 @@
-import React from 'react'
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
-import './fingen/styles/themes.css'
+import './styles/themes.css'
 
-import { AppStateProvider, useAppState } from './fingen/state/AppState'
-import AppLayout from './fingen/components/AppLayout'
+import { AppStateProvider, useAppState } from './state/AppState'
+import AppLayout from './components/AppLayout'
 import { AuthProvider } from './contexts/AuthContext'
-// Top navbar removed per request; sidebar lives inside Dashboard UI
 
-// Pages
-import Dashboard from './fingen/pages/Dashboard'
-import Onboarding from './fingen/pages/Onboarding'
-import BudgetPlanner from './fingen/pages/BudgetPlanner'
-import LearnFinance from './fingen/pages/LearnFinance'
-import Invest from './fingen/pages/Invest'
-import BankPayments from './fingen/pages/BankPayments'
-import Rewards from './fingen/pages/Rewards'
-import Community from './fingen/pages/Community'
-import Coach from './fingen/pages/Coach'
-import SpendTracker from './fingen/pages/SpendTracker'
-import BillSplitter from './fingen/pages/BillSplitter'
-import Notifications from './fingen/pages/Notifications'
-import Settings from './fingen/pages/Settings'
-import PocketPlan from './pocketplan/PocketPlan'
+
+
+import Dashboard from './pages/Dashboard'
+import Onboarding from './pages/Onboarding'
+import BudgetPlanner from './pages/BudgetPlanner'
+import LearnFinance from './pages/LearnFinance'
+import Invest from './pages/Invest'
+import BankPayments from './pages/BankPayments'
+import Rewards from './pages/Rewards'
+import Community from './pages/Community'
+import Coach from './pages/Coach'
+import SpendTracker from './pages/SpendTracker'
+import BillSplitter from './pages/BillSplitter'
+import Notifications from './pages/Notifications'
+import Settings from './pages/Settings'
+import PocketPlan from './pages/PocketPlan'
 import Login from './components/Login'
-import AIInsights from './fingen/pages/AIInsights'
-import AIBudgetWizard from './fingen/pages/AIBudgetWizard'
-import SIP from './fingen/pages/SIP'
-import EducationVideos from './fingen/pages/EducationVideos'
+import AIInsights from './pages/AIInsights'
+import AIBudgetWizard from './pages/AIBudgetWizard'
+import SIP from './pages/SIP'
+import EducationVideos from './pages/EducationVideos'
 
 function AppShell() {
   const { theme } = useAppState()
   const themeClass =
     theme === 'Dark' ? 'bnm-theme-dark' :
-    theme === 'Neon' ? 'bnm-theme-neon' :
-    theme === 'Light' ? 'bnm-theme-light' :
-    theme === 'FoodLover' ? 'theme-food' :
-    theme === 'Fitness' ? 'theme-fitness' : 'theme-selfcare'
+      theme === 'Neon' ? 'bnm-theme-neon' :
+        theme === 'Light' ? 'bnm-theme-light' :
+          theme === 'FoodLover' ? 'theme-food' :
+            theme === 'Fitness' ? 'theme-fitness' : 'theme-selfcare'
   return (
     <div className={`App ${themeClass}`} style={{ padding: 16 }}>
       <Routes>
-        <Route element={<AppLayout />}> 
+        <Route element={<AppLayout />}>
           <Route path="/" element={<BankPayments />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />

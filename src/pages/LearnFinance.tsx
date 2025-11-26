@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useAppState } from '../state/AppState'
-import '../../pocketplan/styles.css'
+import '../styles/pocketplan.css'
 
 const topics = ['Credit cards','Savings','Investments','UPI fraud awareness','Loans','Emergency funds']
 

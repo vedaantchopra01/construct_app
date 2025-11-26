@@ -1,6 +1,6 @@
 import React from 'react'
 import { useAppState } from '../state/AppState'
-import '../../pocketplan/styles.css'
+import '../styles/pocketplan.css'
 import '../styles/community.css'
 
 type CommunityItem = {
@@ -63,7 +63,7 @@ const Community: React.FC = () => {
     challenges.some(ch => ch.title === title)
 
   const getChallengeByTitle = (title: string) => {
-    // Return the most recent matching challenge
+    
     const matches = challenges.filter(ch => ch.title === title)
     return matches.length ? matches[matches.length - 1] : undefined
   }

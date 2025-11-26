@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../../pocketplan/styles.css'
+import '../styles/pocketplan.css'
 
 const BillSplitter: React.FC = () => {
   const [friends, setFriends] = useState<string>('Aman, Priya, Rohit')

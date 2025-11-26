@@ -1,8 +1,8 @@
 import React, { useMemo, useState } from 'react'
 import { useAppState } from '../state/AppState'
-import '../../pocketplan/styles.css'
+import '../styles/pocketplan.css'
 
-const funLines = [
+const funLines: any[] = [
   (food: number, gym: number) => `Whoa! 😮 You spent ₹${food} on food vs ₹${gym} on gym. Fitness or food? 😅`,
   (transport: number) => `Transport = Money leak 🚗💸… share rides and save ₹${Math.min(800, Math.round(transport * 0.25))} next week.`,
   (rent: number, income: number) => `Rent ate ${Math.round((rent / Math.max(1, income)) * 100)}% of your budget 🏠😵… let’s optimize somewhere else.`,

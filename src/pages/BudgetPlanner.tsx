@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import { useAppState } from '../state/AppState'
-import '../../pocketplan/styles.css'
+import '../styles/pocketplan.css'
 
 const BudgetPlanner: React.FC = () => {
   const { profile, setProfile, setBudgetPlan } = useAppState()
@@ -49,7 +49,7 @@ const BudgetPlanner: React.FC = () => {
         </div>
         {plan.overspendAlert && <div className="pp-message">Overspending alert ⚠️ Essentials exceed 50% of income. Try reducing rent/food/transport.</div>}
 
-        {/* Sliders with editable fields beside */}
+        {}
         <div style={{ marginTop: 10 }}>
           {[
             { label: 'Rent', value: rent, set: setRent },

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useAppState } from '../state/AppState'
-import '../../pocketplan/styles.css'
+import '../styles/pocketplan.css'
 import '../styles/invest.css'
 
 const EducationVideos: React.FC = () => {

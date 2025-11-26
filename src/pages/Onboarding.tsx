@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import { useAppState, Persona, Goal, Theme } from '../state/AppState'
-import '../../pocketplan/styles.css'
+import '../styles/pocketplan.css'
 
 const Onboarding: React.FC = () => {
   const { setProfile, setTheme, theme } = useAppState()
@@ -85,7 +85,7 @@ const Onboarding: React.FC = () => {
           </div>
         </div>
 
-        {/* Preferences: savings, monthly goal, and theme vibe */}
+        {}
         <div className="pp-row" style={{ marginTop: 10 }}>
           <div className="pp-col">
             <label className="pp-label">Preferred Savings</label>

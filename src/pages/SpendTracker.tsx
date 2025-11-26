@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useAppState } from '../state/AppState'
-import '../../pocketplan/styles.css'
+import '../styles/pocketplan.css'
 
 const SpendTracker: React.FC = () => {
   const { addTransaction, notify } = useAppState()

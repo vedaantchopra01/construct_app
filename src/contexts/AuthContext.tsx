@@ -31,14 +31,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     if (storedUser) {
       try {
         const parsed = JSON.parse(storedUser)
-        // ensure shape
+        
         if (parsed && typeof parsed === 'object' && parsed.id && parsed.email) {
           setUser(parsed)
         } else {
           localStorage.removeItem('user')
         }
       } catch (e) {
-        // corrupted value; clear it to prevent app crash
+        
         localStorage.removeItem('user')
         setUser(null)
       }

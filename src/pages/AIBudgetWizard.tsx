@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { useAppState } from '../state/AppState'
 import '../styles/ai.css'
-import '../../pocketplan/styles.css'
+import '../styles/pocketplan.css'
 
 type Step = 'intro' | 'collect' | 'analyze' | 'recommend' | 'summary'
 
@@ -35,14 +35,14 @@ const AIBudgetWizard: React.FC = () => {
       Savings: clamp(income * 0.15),
       Invest: clamp(income * 0.05)
     }
-    // Adaptive nudges: if overspending recently, bump by +10% and trim elsewhere
+    
     const bump = (k: keyof typeof base) => { base[k] = clamp(base[k] * 1.1) }
     const cut = (k: keyof typeof base) => { base[k] = clamp(base[k] * 0.95) }
     if (recentTotals.Food > base.Food) { bump('Food'); cut('Shopping') }
     if (recentTotals.Transport > base.Transport) { bump('Transport'); cut('Misc') }
     const sumSpend = base.Rent + base.Food + base.Transport + base['Self-care'] + base.Gym + base.Shopping + base.Misc
     const sumTotal = sumSpend + base.Savings + base.Invest
-    // Normalize to income ceiling
+    
     if (sumTotal > income && income > 0) {
       const scale = income / sumTotal
       ;(Object.keys(base) as (keyof typeof base)[]).forEach(k => base[k] = clamp(base[k] * scale))
@@ -107,7 +107,7 @@ const AIBudgetWizard: React.FC = () => {
           </div>
         </div>
 
-        {/* Animated stages */}
+        {}
         <div className="ai-stage">
           {step === 'intro' && (
             <div className="ai-card">
