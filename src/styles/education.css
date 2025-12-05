@@ -1,0 +1,51 @@
+/* Edu Videos: neon capsules, progress bar, filters, chat, responsive */
+.edu-shell { padding: 18px; color: #dbe7ff; }
+
+/* Hero header */
+.edu-hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 12px; align-items: center; }
+.edu-hero-left { background: rgba(12,12,18,0.8); border: 1px solid rgba(147,197,253,0.16); border-radius: 16px; padding: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+.edu-hero-right { background: rgba(12,12,18,0.8); border: 1px solid rgba(147,197,253,0.16); border-radius: 16px; padding: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+.edu-hero-title { font-size: 22px; font-weight: 800; letter-spacing: 0.3px; text-transform: lowercase; background: linear-gradient(90deg,#22D3EE,#A78BFA); -webkit-background-clip:text; background-clip:text; color: transparent; }
+.edu-progress { height: 12px; border-radius: 999px; background: rgba(147,197,253,0.14); overflow: hidden; margin-top: 10px; }
+.edu-progress > div { height: 100%; background: linear-gradient(90deg,#22D3EE,#A78BFA); box-shadow: 0 8px 18px rgba(34,211,238,0.35); }
+.edu-progress-label { margin-top: 6px; font-size: 12px; opacity: 0.85; }
+
+/* Filters and search */
+.edu-filter-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.edu-pill { background: rgba(147,197,253,0.12); border: 1px solid rgba(147,197,253,0.25); color: #cfe6ff; padding: 8px 12px; border-radius: 999px; font-weight: 700; cursor: pointer; }
+.edu-pill.active { background: linear-gradient(135deg,#22D3EE,#A78BFA); color: #0b0e10; box-shadow: 0 10px 24px rgba(34,211,238,0.25); }
+.edu-search { margin-top: 10px; width: 100%; background: #0c1321; color: #e6f0ff; border: 1px solid rgba(147,197,253,0.25); border-radius: 12px; padding: 10px 12px; }
+
+/* Video capsules grid */
+.edu-grid { margin-top: 14px; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.edu-item { background: rgba(11,14,16,0.95); border: 1px solid rgba(147,197,253,0.16); border-radius: 14px; padding: 12px; display: grid; gap: 8px; box-shadow: 0 0 0 1px rgba(147,197,253,0.08) inset, 0 16px 28px rgba(0,0,0,0.3); }
+.edu-item-title { font-weight: 800; color: #cfe6ff; }
+.edu-item-sub { color: #9fb3c8; }
+.edu-frame { width: 100%; aspect-ratio: 16 / 9; border: none; border-radius: 12px; background: #0d0f10; }
+.edu-actions { display: flex; gap: 8px; }
+.edu-btn { border: none; border-radius: 12px; padding: 10px 14px; font-weight: 800; cursor: pointer; background: rgba(147,197,253,0.12); color: #cfe6ff; }
+.edu-btn:hover { background: rgba(147,197,253,0.18); }
+.edu-empty { background: rgba(147,197,253,0.06); border: 1px dashed rgba(147,197,253,0.25); border-radius: 12px; padding: 14px; text-align: center; }
+
+/* Chat widget */
+.edu-chat { margin-top: 16px; background: rgba(12,12,18,0.85); border: 1px solid rgba(147,197,253,0.16); border-radius: 16px; }
+.edu-chat-header { display: grid; grid-template-columns: 1fr auto auto; gap: 12px; align-items: center; padding: 12px 14px; border-bottom: 1px solid rgba(147,197,253,0.16); }
+.edu-chat-title { font-weight: 800; }
+.edu-chat-lang { display: flex; align-items: center; gap: 6px; }
+.edu-chat-lang select { background: #0c1321; color: #e6f0ff; border: 1px solid rgba(147,197,253,0.25); border-radius: 10px; padding: 6px 8px; }
+.edu-chat-toggle { background: rgba(147,197,253,0.12); color: #cfe6ff; border: 1px solid rgba(147,197,253,0.25); padding: 8px 12px; border-radius: 999px; cursor: pointer; }
+.edu-chat-body { display: grid; grid-template-rows: 1fr auto; height: 260px; }
+.edu-chat-messages { padding: 12px; overflow: auto; display: grid; gap: 8px; }
+.edu-msg { max-width: 80%; padding: 10px 12px; border-radius: 12px; font-size: 14px; }
+.edu-msg.user { background: rgba(147,197,253,0.18); justify-self: end; }
+.edu-msg.ai { background: rgba(167,139,250,0.18); justify-self: start; }
+.edu-chat-input { display: grid; grid-template-columns: 1fr auto; gap: 8px; padding: 10px; border-top: 1px solid rgba(147,197,253,0.16); }
+.edu-chat-input input { background: #0c1321; color: #e6f0ff; border: 1px solid rgba(147,197,253,0.25); border-radius: 10px; padding: 10px 12px; }
+.edu-chat-input button { border: none; border-radius: 10px; padding: 10px 14px; font-weight: 800; cursor: pointer; background: linear-gradient(135deg,#22D3EE,#A78BFA); color: #0b0e10; box-shadow: 0 10px 24px rgba(34,211,238,0.25); }
+
+/* Responsive */
+@media (max-width: 640px) {
+  .edu-hero { grid-template-columns: 1fr; }
+  .edu-chat-body { height: 320px; }
+  .edu-grid { grid-template-columns: 1fr; }
+}
